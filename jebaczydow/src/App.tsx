@@ -4,7 +4,7 @@ function greeter (props){
   const who = "swiecie";
 
   return(
-    <p> witaj {who}!</p>
+    <p> witaj67s {who}!</p>
   );
 
 }
@@ -13,7 +13,7 @@ function app() {
     <div>
       <greeter />
       <greeter name="mario" />
-      <greeter who="Luigi" />
+      <greeter who="Luigis2" />
     </div>
   );
 }
