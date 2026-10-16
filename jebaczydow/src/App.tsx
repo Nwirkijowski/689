@@ -13,7 +13,7 @@ function app() {
     <div>
       <greeter />
       <greeter name="mario2" />
-      <greeter who="Luigis2" />
+      <greeter who="Luigis23" />
     </div>
   );
 }
