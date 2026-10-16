@@ -12,7 +12,7 @@ function app() {
   return(
     <div>
       <greeter />
-      <greeter name="mario" />
+      <greeter name="mario2" />
       <greeter who="Luigis2" />
     </div>
   );
