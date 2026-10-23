@@ -2,7 +2,7 @@
  import { useState } from "react";
  import "bootstrap/dist/css/bootstrap.min.css";
 
-
+// ZADANIA ZROBIONE Z POPRZEDNIEJ LEKCJI (KONCZYLEM PRZY PANA BIORKU) ZADANIA Z AKTUALNEJ LEKCJI NIE ZDAZYLEM
 interface MovieProps {
   posterUrl: string;
   title: string;
