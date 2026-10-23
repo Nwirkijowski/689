@@ -1,4 +1,7 @@
-// import React from "react";
+ import React from "react";
+ import { useState } from "react";
+ import "bootstrap/dist/css/bootstrap.min.css";
+
 
 interface MovieProps {
   posterUrl: string;
@@ -105,6 +108,9 @@ function Album(props: AlbumProps) {
 
 function App() {
 
+  const [FilmyOpen, setFilmyOpen] = useState("true");
+  const [KsiazkiOpen, setKsiazkiOpen] = useState("true");
+  const [AlbumOpen, setAlbumOpen] = useState("true");
 
   const movies: MovieProps[] = [
     { releaseYear: 1999, title: "The Matrix", rating: 9, posterUrl: "https://m.media-amazon.com/images/M/MV5BN2NmN2VhMTQtMDNiOS00NDlhLTliMjgtODE2ZTY0ODQyNDRhXkEyXkFqcGc@._V1_.jpg" },
@@ -119,7 +125,6 @@ function App() {
         {releaseYear: 2025, numPages: 304, title: "Tiny experiments", coverUrl: "https://m.media-amazon.com/images/I/61rUfWyyfoL._AC_UF1000,1000_QL80_.jpg"},
         {releaseYear: 1999, numPages: 352, title: "Pragmatyczny programista", coverUrl: "https://static01.helion.com.pl/global/okladki/vbig/prag2v.jpg"}
   ];
-
 
   const albums: AlbumProps[] = [
           {releaseYear: 2005, band: "Pendulum", title: "Hold Your Colour", genre: "drum'n'bass", coverUrl: "https://muzikercdn.com/uploads/products/11924/1192412/main_70a2a6cc.jpg", 
@@ -191,8 +196,12 @@ function App() {
   }
 
   return (
-    <div>
-      <h1>Filmy</h1>
+    <div className="kontener">
+      <h1 onClick={() => setFilmyOpen(!FilmyOpen)}>
+        {FilmyOpen ? "▾" : "▸"} Filmy</h1>
+
+      {FilmyOpen && (
+
       <div
         style={{
           display: "flex",
@@ -211,8 +220,12 @@ function App() {
         />
         ))}
       </div>
+      )}
 
-      <h2>Filmy wydane po 2010 roku</h2>
+      <h2 onClick={() => setFilmyOpen(!FilmyOpen)}>
+        {FilmyOpen ? "▾" : "▸"}Filmy wydane po 2010 roku</h2>
+
+        {FilmyOpen && (
       <div
         style={{
           display: "flex",
@@ -231,8 +244,12 @@ function App() {
           />
         ))}
       </div>
+        )}
+      
+      <h1 onClick={() => setKsiazkiOpen(!KsiazkiOpen)}>
+        {KsiazkiOpen ? "▾" : "▸"}Książki</h1>
 
-      <h1>Książki</h1>
+        {KsiazkiOpen && (
       <div
         style={{
           display: "flex",
@@ -252,7 +269,7 @@ function App() {
         />
       ))}
       </div>
-
+      )}
       <h2>Książki od najnowszej</h2>
       <div
         style={{
